@@ -1,0 +1,15 @@
+button {
+    background: none;
+    border: none;
+    font-size: 3rem;
+    padding: 0;
+}
+button:nth-child(2) {
+    margin: 0 4rem;
+}
+button:focus {
+    outline: 0;
+}
+footer {
+    margin-bottom: 1rem;
+}
