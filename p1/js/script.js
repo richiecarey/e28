@@ -1,8 +1,7 @@
 const Game = {
     data() {
         return {
-            playerName: 'Sam',
-            profileUrl: 'http://www.yahoo.com/',
+            project: 'Project 1',
         }
     }
 }
