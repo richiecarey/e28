@@ -3,6 +3,11 @@ const Game = {
         return {
             project: 'Project 1',
         }
+    },
+    methods: {
+        play(player) {
+            console.log(player)
+        }
     }
 }
 

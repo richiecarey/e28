@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>{{ project }}</title>
+        <title>Project 1</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Rock, Paper, Scissors</title>
@@ -35,9 +35,9 @@
             <section class="mb-5">
                 <div class="row text-center">
                     <div class="col-sm">
-                        <button data-button="rock">&#9994;</button>
-                        <button data-button="paper">&#9995;</button>
-                        <button data-button="scissors">&#9996;</button>
+                        <button v-on:click='play("rock")' data-button="rock">&#9994;</button>
+                        <button v-on:click='play("paper")' data-button="paper">&#9995;</button>
+                        <button v-on:click='play("scissors")' data-button="scissors">&#9996;</button>
                     </div>
                 </div>
             </section>
