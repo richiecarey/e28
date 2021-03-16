@@ -11,36 +11,41 @@
         <script src='js/script.js' defer></script>    
     </head>
     <body>
-        <div id="container">
+        <div id="app" v-cloak>
             <section class="mt-4">
                 <div class="row text-center">
                     <div class="col-md-3">
-                        <p class="text-danger h2">Computer: <span id="computer">0</span></p>
+                        <p class="text-danger h2">Computer: <span id="computer">{{ computerScore }}</span></p>
                     </div>
                     <div class="col-md-6">
-                        <p class="h2" id="result">Rock, Paper, Scissors</p>
+                        <p class="h2" v-bind:class="[ messageClass ]">{{ message }}</p>
                     </div>
                     <div class="col-md-3">
-                        <p class="text-success h2">You: <span id="player">0</span></p>
+                        <p class="text-success h2">You: <span id="player">{{ playerScore }}</span></p>
                     </div>
                 </div>
             </section>
             <section class="mt-4">
                 <div class="row text-center mb-5">
                     <div class="col-md">
-                        <p class="h4 d-block">Round: <span id="round">0</span></p>
+                        <p class="h4 d-block">Round: <span id="round">{{ round }}</span></p>
                     </div>
                 </div>
             </section>
             <section class="mb-5">
                 <div class="row text-center">
                     <div class="col-sm">
-                        <button v-on:click='play("rock")' data-button="rock">&#9994;</button>
-                        <button v-on:click='play("paper")' data-button="paper">&#9995;</button>
-                        <button v-on:click='play("scissors")' data-button="scissors">&#9996;</button>
+                        <button v-on:click="play('rock')" data-button="rock">&#9994;</button>
+                        <button v-on:click="play('paper')" data-button="paper">&#9995;</button>
+                        <button v-on:click="play('scissors')" data-button="scissors">&#9996;</button>
                     </div>
                 </div>
             </section>
+            <round-detail
+                v-for='round in rounds' 
+                v-bind:number='round.number' 
+                v-bind:winner='round.winner'>
+            </round-detail>
             <footer class="mt-5">
                 <div class="row text-center">
                     <div class="col">
@@ -49,5 +54,15 @@
                 </div>
             </footer>
         </div>
+
+        <script type='text/x-template' id='round-detail'>
+            <section v-if='!deleted'>
+                <ul>
+                    <li>Round #: {{ number }}</li>
+                    <li>Winner: {{ winner }}</li>
+                </ul>
+            </section>
+        </script>
+
     </body>
 </html>

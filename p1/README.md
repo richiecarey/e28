@@ -2,8 +2,8 @@ _Any instructions/notes in italics should be removed from the template before su
 
 # Project 1
 
--   By: _your first and last name_
--   Production URL: <http://e28p1.yourdomain.com>
+-   By: Richie Carey
+-   Production URL: <http://e28p1.richiecarey.com>
 
 ## Outside resources
 
